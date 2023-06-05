@@ -28,7 +28,7 @@ const startGame = () => {
     // COMO PRINCIPAL.
 
     for (const cell of cellElements) {
-        cell.addEventListener("click", handleClick, {once: true});
+        cell.addEventListener('click', handleClick, {once: true});
     };    
     isCircleTurm = false;
 
