@@ -61,9 +61,13 @@ const combinacao = [
 //CHECAR POR VITÓRIA
 // JOGADOR ATUAL corrent player
 const checkForwin = (currentPlayer) => {
-    
         // ELE VAI CHECAR SE ALGUMA DAS COMBINAÇÕES FORAM PREENCHIDAS PELO JOGADOR ATUAL
-
+        
+    return combinacao.some(combination => {
+        return combination.every(index => {
+            return cellElements[index].classList.contains(currentPlayer);
+        });
+    });
 };
 //MUDAR O SIMBULO DA BOARD swapTurn
 const swapTurn = () => {
