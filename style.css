@@ -7,9 +7,9 @@
 /* SALVANDO PALETA DE CORES */
 :root{
     --cor1:#fff;
-    --cor2:#0C140F;
-    --cor3:#1C3332;
-    --cor4:#21331C;
+    --cor2:#6667E8;
+    --cor3:#6BA7DB;
+    --cor4:#66E8E0;
 }
 
 
@@ -121,17 +121,20 @@ body{
 
 /* MENSAGEM */
 .mensage{
-    display: none;
     position: fixed;
+    /* display: flex; */
+    display: none;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
-    justify-content: center;
+    right: 0;
     align-items: center;
-    background-color: rgba(27, 27, 27, 0.945);
+    justify-content: center;
     flex-direction: column;
+    background-color: #0C140F   ;
+
 }
+   
 
 .btn{
     background-color: var(--cor2);
@@ -154,6 +157,8 @@ body{
     background-color: #134137;
 }
 
-.show-msg{
+/* .show-msg{
     display: flex;
+    display: none; 
 }
+*/
