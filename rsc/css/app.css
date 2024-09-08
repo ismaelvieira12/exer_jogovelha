@@ -64,7 +64,9 @@ body{
         }
         
         /* Criando os elementos do jogo X e Circulo */
-        & .x::after, & .x::before{
+        & .x::after, & .x::before,
+        & .cell:not(.x):not(.circle):hover::after,
+        & .cell:not(.x):not(.circle):hover::before{
             content: "";
             width: 100px;
             height: 15px;
