@@ -31,8 +31,8 @@ body{
         height: 100%;
         width: 100%;
 
-
         & .cell{
+            cursor: pointer;
             position: relative;
             width: 200px;
             height: 200px;
@@ -57,6 +57,10 @@ body{
             &:nth-child(1), &:nth-child(4), &:nth-child(7){
                 border-left: none;
             }
+
+            &.x, &.circle{
+                cursor: not-allowed;
+            }
         }
         
         /* Criando os elementos do jogo X e Circulo */
@@ -75,18 +79,37 @@ body{
             transform: rotate(-45deg);
         }
 
-
         /* Criando o elemento circulo */
         & .circle::after{
             content: "";
             width: 100px;
             height: 100px;
-            border: 2px solid var(--cor1);
+            border: 3px solid var(--cor1);
             border-radius: 50%;
             opacity: 0.9;
         }
     }
+    /* Fazendo a parte do hover de cada elemento */
+    & .board.x .cell:hover::after, & .board.x .cell:hover::before{
+        content: "";
+        width: 100px;
+        height: 15px;
+        background-color: var(--cor3);
+        position: absolute;
+        border-radius: 10px;
+        opacity: 0.2;
+    }
+    
+    & .board.x .cell:hover::after{
+        transform: rotate(45deg);
+    }
 
+    & .board.x .cell:hover::before{
+        transform: rotate(-45deg);
+    }
+
+
+    /* Mensagem de vitória */
     & .winning-message{
         background-color: #272727af;
         display: flex;
