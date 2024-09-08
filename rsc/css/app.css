@@ -33,6 +33,7 @@ body{
 
 
         & .cell{
+            position: relative;
             width: 200px;
             height: 200px;
             border: 1px solid var(--cor4);
@@ -56,6 +57,33 @@ body{
             &:nth-child(1), &:nth-child(4), &:nth-child(7){
                 border-left: none;
             }
+        }
+        
+        /* Criando os elementos do jogo X e Circulo */
+        & .x::after, & .x::before{
+            content: "";
+            width: 100px;
+            height: 15px;
+            background-color: var(--cor3);
+            position: absolute;
+            border-radius: 10px;
+        }
+        & .x::after{
+            transform: rotate(45deg);
+        }
+        & .x::before{
+            transform: rotate(-45deg);
+        }
+
+
+        /* Criando o elemento circulo */
+        & .circle::after{
+            content: "";
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--cor1);
+            border-radius: 50%;
+            opacity: 0.9;
         }
     }
 
