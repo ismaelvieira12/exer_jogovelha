@@ -134,7 +134,7 @@ body{
         height: 100%;
         position: absolute;
         z-index: 100;
-        /* display: none; */
+        display: none;
 
         & .text{
             color: var(--cor6);

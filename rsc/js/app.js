@@ -9,12 +9,14 @@ const  putSymbol = (cell, classToAdd) => {
     cell.classList.add(classToAdd);
 }
 
+
 // 4° Mudar o simbolo se vai ser X ou Circulo
 const swapTurn = () => {
     isCircleTurn = !isCircleTurn;
-
-    boardElement.classList.remove('.circle');
+    
     boardElement.classList.remove('.x');
+    boardElement.classList.remove('.circle');
+
 
     if(isCircleTurn){
         boardElement.classList.add('.circle');
@@ -22,6 +24,18 @@ const swapTurn = () => {
         boardElement.classList.add('.x');
     }
 }
+// const swapTurn = () => {
+//     isCircleTurn = !isCircleTurn;
+
+//     boardElement.classList.remove('.circle');
+//     boardElement.classList.remove('.x');
+
+//     if(isCircleTurn){
+//         boardElement.classList.add('.circle');
+//     }else{
+//         boardElement.classList.add('.x');
+//     }
+// }
 const hendowClick = (e) => {
     // 1° colocar o simbolo se vai ser X ou Circulo
     const cell = e.target;
