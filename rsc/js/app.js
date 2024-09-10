@@ -24,8 +24,6 @@ const swapTurn = () => {
         boardElement.classList.add('.x');
     }
 }
-// const swapTurn = () => {
-//     isCircleTurn = !isCircleTurn;
 
 //     boardElement.classList.remove('.circle');
 //     boardElement.classList.remove('.x');
