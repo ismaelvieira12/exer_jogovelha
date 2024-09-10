@@ -95,8 +95,8 @@ body{
     }
     /* Fazendo a parte do hover de cada elemento */
     /* OBS: o atributo "not()" está servindo para não pegar os parametros atribuidos a tag x quando a board for X */
-    & .board.x .cell:not(.x):not(.circle):hover::after, 
-    & .board.x .cell:not(.x):not(.circle):hover::before{
+    &.board.x .cell:not(.x):not(.circle):hover::after, 
+    &.board.x .cell:not(.x):not(.circle):hover::before{
         content: "";
         width: 100px;
         height: 15px;
