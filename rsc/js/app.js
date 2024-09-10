@@ -25,11 +25,7 @@ const swapTurn = () => {
     }
 }
 
-//     if(isCircleTurn){
-//         boardElement.classList.add('.circle');
-//     }else{
-//         boardElement.classList.add('.x');
-//     }
+
 // }
 const hendowClick = (e) => {
     // 1° colocar o simbolo se vai ser X ou Circulo
