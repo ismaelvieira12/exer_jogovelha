@@ -66,9 +66,7 @@ body{
         }
         
         /* Criando os elementos do jogo X e Circulo */
-        & .x::after, & .x::before,
-        & .cell:not(.x):not(.circle):hover::after,
-        & .cell:not(.x):not(.circle):hover::before{
+        & .x::after, & .x::before{
             content: "";
             width: 70px;
             height: 10px;
@@ -95,13 +93,13 @@ body{
     }
     /* Fazendo a parte do hover de cada elemento */
     /* OBS: o atributo "not()" está servindo para não pegar os parametros atribuidos a tag x quando a board for X */
-    &.board.x .cell:not(.x):not(.circle):hover::after, 
-    &.board.x .cell:not(.x):not(.circle):hover::before{
-        content: "";
-        width: 100px;
-        height: 15px;
-        background-color: var(--cor3);
+    /* & .board.x .cell:not(.x):not(.circle):hover::after, 
+    & .board.x .cell:not(.x):not(.circle):hover::before{
         position: absolute;
+        content: "";
+        width: 70px;
+        height: 10px;
+        background-color: var(--cor3);
         border-radius: 10px;
         opacity: 0.2;
     }
@@ -116,12 +114,12 @@ body{
 
     & .board.circle .cell:not(.x):not(.circle):hover::after{
         content: "";
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         border: 3px solid var(--cor1);
         border-radius: 50%;
         opacity: 0.4;
-    }
+    } */
 
     /* Mensagem de vitória */
     & .winning-message{
