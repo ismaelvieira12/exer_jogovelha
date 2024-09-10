@@ -25,9 +25,6 @@ const swapTurn = () => {
     }
 }
 
-//     boardElement.classList.remove('.circle');
-//     boardElement.classList.remove('.x');
-
 //     if(isCircleTurn){
 //         boardElement.classList.add('.circle');
 //     }else{
