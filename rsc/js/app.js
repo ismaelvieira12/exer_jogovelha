@@ -25,8 +25,6 @@ const swapTurn = () => {
     }
 }
 
-
-// }
 const hendowClick = (e) => {
     // 1° colocar o simbolo se vai ser X ou Circulo
     const cell = e.target;
