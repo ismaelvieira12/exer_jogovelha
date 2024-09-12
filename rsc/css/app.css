@@ -66,8 +66,12 @@ body{
 
         }
         
+
+
         /* Criando os elementos do jogo X e Circulo */
-        & .x::after, & .x::before {
+        & .x::after, & .x::before,
+        &.x .cell:not(.x):not(.circle):hover::after,
+        &.x .cell:not(.x):not(.circle):hover::before{
             content: "";
             width: 70px;
             height: 10px;
@@ -76,10 +80,13 @@ body{
             border-radius: 10px;
         }
         
-        & .x::after{
+        & .x::after,
+        &.x .cell:hover::after{
             transform: rotate(45deg);
         }
-        & .x::before{
+
+        & .x::before,
+        &.x .cell:hover::before{
             transform: rotate(-45deg);
         }
 
@@ -104,17 +111,19 @@ body{
         background-color: var(--cor3);
         border-radius: 10px;
         opacity: 0.2;
-    }
+    } 
     
     & .board.x .cell:hover::after{
         transform: rotate(45deg);
+        opacity: 0.2;
     }
 
     & .board.x .cell:hover::before{
         transform: rotate(-45deg);
-    }
-
-    & .board.circle .cell:not(.x):not(.circle):hover::after{
+        opacity: 0.2;
+    }*/
+    
+    /* & .board.circle .cell:not(.x):not(.circle):hover::after{
         content: "";
         width: 70px;
         height: 70px;
