@@ -123,14 +123,14 @@ body{
         opacity: 0.2;
     }*/
     
-    /* & .board.circle .cell:not(.x):not(.circle):hover::after{
+    & .board.circle .cell:not(.x):not(.circle):hover::after{
         content: "";
         width: 70px;
         height: 70px;
         border: 3px solid var(--cor1);
         border-radius: 50%;
         opacity: 0.4;
-    } */
+    }
 
     /* Mensagem de vitória */
     & .winning-message{
