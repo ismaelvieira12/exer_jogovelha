@@ -4,6 +4,21 @@ const boardElement = document.querySelector('.board');
 // para colocar a marca vamos precisar de uma variavel que diga se é a vez do elemento.
 let isCircleTurn;
 
+
+const combinationForWin = [
+// Primeiro quadro possivel de combinações de vitória
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+// Segundo quadro possivel de combinações de vitória
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+// Terceiro quadro possivel de combinações de vitória
+    [0, 4, 8],
+    [2, 4, 6]
+]
+
 const startGames = () => {
     // Vamos add em cada celula um evento e click atraveis do FOR OFF
     for(const cell of cellElements){
@@ -22,6 +37,14 @@ const  putSymbol = (cell, classToAdd) => {
     cell.classList.add(classToAdd);
 }
 
+// 2° Checak por vitória, ver quem venceu dos dois
+const checkForWin = (playerAtual) => {
+    return combinationForWin.some((combination) => {
+        return combination.every((index) => {
+            return cellElements[index].classList.contains(playerAtual);
+        })
+    })
+}
 
 // 4° Mudar o simbolo se vai ser X ou Circulo
 const swapTurn = () => {
@@ -45,6 +68,10 @@ const hendowClick = (e) => {
     putSymbol(cell, classToAdd);
 
     // 2° Checak por vitória, ver quem venceu dos dois
+    const win = checkForWin(classToAdd);
+    if(win){
+        console.log("win!!");
+    }
     // 3° Verificar por empate
     
     // 4° Mudar o simbolo se vai ser X ou Circulo
