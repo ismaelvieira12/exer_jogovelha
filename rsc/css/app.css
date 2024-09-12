@@ -63,12 +63,11 @@ body{
             &.x, &.circle{
                 cursor: not-allowed;
             }
+
         }
         
         /* Criando os elementos do jogo X e Circulo */
-        & .cell.x::after, & .cell.x::before,
-        & .x .cell:not(.x):not(.ciercle):hover::after,
-        & .x .cell:not(.x):not(.ciercle):hover::before{
+        & .x::after, & .x::before {
             content: "";
             width: 70px;
             height: 10px;
@@ -76,10 +75,11 @@ body{
             position: absolute;
             border-radius: 10px;
         }
-        & .x .cell:hover::after{
+        
+        & .x::after{
             transform: rotate(45deg);
         }
-        & .x  .cell:hover::before{
+        & .x::before{
             transform: rotate(-45deg);
         }
 
