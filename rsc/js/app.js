@@ -2,7 +2,20 @@ const cellElements = document.querySelectorAll('.cell');
 const boardElement = document.querySelector('.board');
 // Para essa função funcionar direitinho temos que cumprir alguns passos..
 // para colocar a marca vamos precisar de uma variavel que diga se é a vez do elemento.
-let isCircleTurn = false;
+let isCircleTurn;
+
+const startGames = () => {
+    // Vamos add em cada celula um evento e click atraveis do FOR OFF
+    for(const cell of cellElements){
+        cell.addEventListener('click', hendowClick, {once: true}); //Aqui o once:true serve pra dizer que a função so vai acontecer uma vez
+    }
+
+    // Para que oo jogo ja inicie coom o X jogando temos que setar a classe x
+
+    isCircleTurn = false;
+    boardElement.classList.add('x');
+}
+
 
 // 1° colocar o simbolo se vai ser X ou Circulo
 const  putSymbol = (cell, classToAdd) => {
@@ -38,11 +51,6 @@ const hendowClick = (e) => {
     swapTurn(); // Servirar para alterar o simbolo..
 }
 
-// Vamos add em cada celula um evento e click atraveis do FOR OFF
-for(const cell of cellElements){
-    cell.addEventListener('click', hendowClick, {once: true}); //Aqui o once:true serve pra dizer que a função so vai acontecer uma vez
-}
-
 
 
 
@@ -51,3 +59,6 @@ const mensage = document.querySelector(".winning-message");
 btn.addEventListener('click', () => {
     mensage.style.display="none";
 })
+
+
+startGames();
