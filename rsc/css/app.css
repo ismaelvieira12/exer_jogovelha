@@ -66,10 +66,20 @@ body{
 
         }
         
+        /* Fazendo a parte do hover de cada elemento */
+        /* OBS: o atributo "not()" está servindo para não pegar os parametros atribuidos a tag x quando a board for X */
+        &.x .cell:not(.x):not(.circle):hover::after,
+        &.x .cell:not(.x):not(.circle):hover::before,
+        &.circle .cell:not(.x):not(.circle):hover::after{
+            opacity: 0.2 !important;
+        }
+
 
 
         /* Criando os elementos do jogo X e Circulo */
-        & .x::after, & .x::before{
+        & .x::after, & .x::before,
+        &.x .cell:not(.x):not(.circle):hover::after,
+        &.x .cell:not(.x):not(.circle):hover::before{
             content: "";
             width: 70px;
             height: 10px;
@@ -79,12 +89,12 @@ body{
         }
         
         & .x::after,
-        &.x .cell:hover::after{
+        &.x .cell:not(.x):not(.circle):hover::after{
             transform: rotate(45deg);
         }
 
         & .x::before,
-        &.x .cell:hover::before{
+        &.x .cell:not(.x):not(.circle):hover::before{
             transform: rotate(-45deg);
         }
 
@@ -98,37 +108,7 @@ body{
             opacity: 0.9;
         }
     }
-    /* Fazendo a parte do hover de cada elemento */
-    /* OBS: o atributo "not()" está servindo para não pegar os parametros atribuidos a tag x quando a board for X */
-    & .board.x .cell:not(.x):not(.circle):hover::after, 
-    & .board.x .cell:not(.x):not(.circle):hover::before{
-        position: absolute;
-        content: "";
-        width: 70px;
-        height: 10px;
-        background-color: var(--cor3);
-        border-radius: 10px;
-        opacity: 0.2;
-    } 
     
-    & .board.x .cell:hover::after{
-        transform: rotate(45deg);
-        opacity: 0.2;
-    }
-
-    & .board.x .cell:hover::before{
-        transform: rotate(-45deg);
-        opacity: 0.2;
-    }
-    
-    & .board.circle .cell:not(.x):not(.circle):hover::after{
-        content: "";
-        width: 60px;
-        height: 60px;
-        border: 3px solid var(--cor1);
-        border-radius: 50%;
-        opacity: 0.4;
-    }
 
     /* Mensagem de vitória */
     & .winning-message{
