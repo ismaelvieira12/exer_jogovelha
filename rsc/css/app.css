@@ -71,7 +71,7 @@ body{
         &.x .cell:not(.x):not(.circle):hover::after,
         &.x .cell:not(.x):not(.circle):hover::before,
         &.circle .cell:not(.x):not(.circle):hover::after{
-            opacity: 0.2 !important;
+            opacity: 0.4 !important;
         }
 
 
@@ -99,7 +99,8 @@ body{
         }
 
         /* Criando o elemento circulo */
-        & .circle::after{
+        & .circle::after,
+        &.circle .cell:not(.x):not(.circle):hover::after{
             content: "";
             width: 60px;
             height: 60px;

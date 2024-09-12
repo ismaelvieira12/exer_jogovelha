@@ -14,14 +14,14 @@ const  putSymbol = (cell, classToAdd) => {
 const swapTurn = () => {
     isCircleTurn = !isCircleTurn;
     
-    boardElement.classList.remove('.x');
-    boardElement.classList.remove('.circle');
+    boardElement.classList.remove('x');
+    boardElement.classList.remove('circle');
 
 
     if(isCircleTurn){
-        boardElement.classList.add('.circle');
+        boardElement.classList.add('circle');
     }else{
-        boardElement.classList.add('.x');
+        boardElement.classList.add('x');
     }
 }
 
