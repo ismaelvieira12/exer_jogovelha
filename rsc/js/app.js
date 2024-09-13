@@ -1,5 +1,7 @@
 const cellElements = document.querySelectorAll('.cell');
 const boardElement = document.querySelector('.board');
+const btn = document.querySelector("#btn");
+const mensage = document.querySelector(".winning-message");
 const text = document.querySelector('.text');
 
 // Para essa função funcionar direitinho temos que cumprir alguns passos..
@@ -64,8 +66,15 @@ const swapTurn = () => {
 }
 
 
+// 3° Verificar por empate
 const endGame = (draw) => {
-
+    if(draw){
+        text.innerText = "Empate"
+        mensage.style.display='flex';
+    }else{
+        text.innerText = isCircleTurn ? "Circulo Venceu!" : "X venceu!";
+        mensage.style.display='flex';
+    }
 }
 
 const hendowClick = (e) => {
@@ -77,10 +86,10 @@ const hendowClick = (e) => {
     // 2° Checak por vitória, ver quem venceu dos dois
     const win = checkForWin(classToAdd);
     if(win){
+        // 3° Verificar por empate
         console.log("win!!");
+        endGame(true);
     }
-    // 3° Verificar por empate
-    endGame(draw)
 
 
     // 4° Mudar o simbolo se vai ser X ou Circulo
@@ -90,8 +99,7 @@ const hendowClick = (e) => {
 
 
 
-const btn = document.querySelector("#btn");
-const mensage = document.querySelector(".winning-message");
+
 btn.addEventListener('click', () => {
     mensage.style.display="none";
 })
