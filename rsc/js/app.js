@@ -1,5 +1,7 @@
 const cellElements = document.querySelectorAll('.cell');
 const boardElement = document.querySelector('.board');
+const text = document.querySelector('.text');
+
 // Para essa função funcionar direitinho temos que cumprir alguns passos..
 // para colocar a marca vamos precisar de uma variavel que diga se é a vez do elemento.
 let isCircleTurn;
@@ -61,6 +63,11 @@ const swapTurn = () => {
     }
 }
 
+
+const endGame = (draw) => {
+
+}
+
 const hendowClick = (e) => {
     // 1° colocar o simbolo se vai ser X ou Circulo
     const cell = e.target;
@@ -73,7 +80,9 @@ const hendowClick = (e) => {
         console.log("win!!");
     }
     // 3° Verificar por empate
-    
+    endGame(draw)
+
+
     // 4° Mudar o simbolo se vai ser X ou Circulo
     swapTurn(); // Servirar para alterar o simbolo..
 }
