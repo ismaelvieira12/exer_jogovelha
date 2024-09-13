@@ -77,7 +77,7 @@ const swapTurn = () => {
 
 const setDraw = () => {
     return [...cellElements].every((cell) => {
-        cell.classList.contains("x") || cell.classList.contains("circle");
+       return cell.classList.contains("x") || cell.classList.contains("circle");
     })
 }
 const endGame = (draw) => {
