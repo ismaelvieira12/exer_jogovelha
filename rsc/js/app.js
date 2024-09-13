@@ -82,7 +82,7 @@ const setDraw = () => {
 }
 const endGame = (draw) => {
     if(draw){
-        text.innerText = "Empate"
+        text.innerText = "Empate";
         mensage.style.display='flex';
     }else{
         text.innerText = isCircleTurn ? "Circulo Venceu!" : "X venceu!";
@@ -98,15 +98,22 @@ const hendowClick = (e) => {
 
     // 2° Checak por vitória, ver quem venceu dos dois
     const win = checkForWin(classToAdd);
+
+    // 3° Verificar por empate
+    const isDraw = setDraw();
     if(win){
-        // 3° Verificar por empate
         console.log("win!!");
         endGame(false);
+
+    }else if(isDraw){
+        endGame(true);
+
+    } else{
+        // 4° Mudar o simbolo se vai ser X ou Circulo
+        swapTurn(); // Servirar para alterar o simbolo..
     }
+    
 
-
-    // 4° Mudar o simbolo se vai ser X ou Circulo
-    swapTurn(); // Servirar para alterar o simbolo..
 }
 
 
