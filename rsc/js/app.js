@@ -26,13 +26,16 @@ const combinationForWin = [
 const startGames = () => {
     // Vamos add em cada celula um evento e click atraveis do FOR OFF
     for(const cell of cellElements){
+        cell.removeEventListener('click', hendowClick);
+        cell.classList.remove('x');
+        cell.classList.remove('circle');
         cell.addEventListener('click', hendowClick, {once: true}); //Aqui o once:true serve pra dizer que a função so vai acontecer uma vez
     }
 
     // Para que oo jogo ja inicie coom o X jogando temos que setar a classe x
 
     isCircleTurn = false;
-    boardElement.classList.add('x');
+    setClassBoard();
 }
 
 
@@ -51,9 +54,8 @@ const checkForWin = (playerAtual) => {
 }
 
 // 4° Mudar o simbolo se vai ser X ou Circulo
-const swapTurn = () => {
-    isCircleTurn = !isCircleTurn;
-    
+
+const setClassBoard = () => {
     boardElement.classList.remove('x');
     boardElement.classList.remove('circle');
 
@@ -65,8 +67,19 @@ const swapTurn = () => {
     }
 }
 
+const swapTurn = () => {
+    isCircleTurn = !isCircleTurn;
+   setClassBoard();
+}
+
 
 // 3° Verificar por empate
+
+const setDraw = () => {
+    return [...cellElements].every((cell) => {
+        cell.classList.contains("x") || cell.classList.contains("circle");
+    })
+}
 const endGame = (draw) => {
     if(draw){
         text.innerText = "Empate"
@@ -88,7 +101,7 @@ const hendowClick = (e) => {
     if(win){
         // 3° Verificar por empate
         console.log("win!!");
-        endGame(true);
+        endGame(false);
     }
 
 
@@ -101,6 +114,7 @@ const hendowClick = (e) => {
 
 
 btn.addEventListener('click', () => {
+    startGames();    
     mensage.style.display="none";
 })
 
