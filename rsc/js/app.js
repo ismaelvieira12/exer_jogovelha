@@ -82,7 +82,7 @@ const setDraw = () => {
 }
 const endGame = (draw) => {
     if(draw){
-        text.innerText = "Empate";
+        text.innerText = "Velha";
         mensage.style.display='flex';
     }else{
         text.innerText = isCircleTurn ? "Circulo Venceu!" : "X venceu!";
