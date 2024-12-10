@@ -87,7 +87,8 @@ body{
             position: absolute;
             border-radius: 10px;
         }
-        
+
+        /*Criando um elemento X e circle para o hover da célula*/
         & .x::after,
         &.x .cell:not(.x):not(.circle):hover::after{
             transform: rotate(45deg);
