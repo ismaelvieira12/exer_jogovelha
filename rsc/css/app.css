@@ -131,7 +131,7 @@ body{
             margin: 25px;
             text-align: center;
         }
-
+    /*estilizando o botão*/
         & .btn{
             width: 250px;
             height: 50px;
