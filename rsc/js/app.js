@@ -60,7 +60,7 @@ const setClassBoard = () => {
     boardElement.classList.remove('x');
     boardElement.classList.remove('circle');
 
-
+// add a classe no circle
     if(isCircleTurn){
         boardElement.classList.add('circle');
     }else{
