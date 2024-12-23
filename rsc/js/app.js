@@ -1,3 +1,4 @@
+//pegando os elementos do HTML
 const cellElements = document.querySelectorAll('.cell');
 const boardElement = document.querySelector('.board');
 const btn = document.querySelector("#btn");
